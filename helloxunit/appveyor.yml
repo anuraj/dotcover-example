@@ -1,7 +1,9 @@
 version: 1.0.{build}
+image: Visual Studio 2017 Preview
 install:
-- cmd: dotnet restore
+- cmd: dotnet restore helloxunit\helloxunit.csproj
 build:
   verbosity: minimal
 test_script:
-- cmd: dotnet dotCover test
+- cmd: dotnet test helloxunit\helloxunit.csproj
+- cmd: dotnet dotCover test helloxunit\helloxunit.csproj
